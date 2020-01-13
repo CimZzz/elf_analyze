@@ -172,6 +172,34 @@ class ElfByteUtils {
 			yield byte;
 		}
 	}
+
+	/// 将原始数据转换为 大端字节序
+	static int toMSB(int number, {int effectiveCount = -1}) {
+		var loopCount = 0;
+		if(effectiveCount == -1) {
+			loopCount = 4;
+		}
+		var convertNumber = 0;
+		for(var i = 0 ; i < loopCount ; i ++) {
+			convertNumber |= (number >> (i * 8)) & 0xFF;
+		}
+
+		return convertNumber;
+	}
+
+	/// 将原始数据转换为 小端字节序
+	static int toLSB(int number, {int effectiveCount = -1}) {
+		var loopCount = effectiveCount;
+		if(loopCount == -1) {
+			loopCount = 4;
+		}
+		var convertNumber = 0;
+		for(var i = loopCount - 1 ; i >= 0 ; i --) {
+			convertNumber |= (number >> (i * 8)) & 0xFF;
+		}
+
+		return convertNumber;
+	}
 }
 
 

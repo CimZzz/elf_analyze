@@ -1,6 +1,7 @@
 import 'package:elf_analyze/src/elf_base.dart';
 import 'package:elf_analyze/src/elf_buffer.dart';
 import 'package:elf_analyze/src/elf_types.dart';
+import 'package:elf_analyze/src/elf_utils.dart';
 
 class ElfProgramHeader extends OperableProperty {
 	
@@ -58,14 +59,45 @@ class ElfProgramHeader extends OperableProperty {
 	/// p_vaddr 和 p_offset 对 p_align 取模后应该等于 0
 	@Elf32_Word
 	int p_align;
+
+	@Unsigned_Char
+	List<int> p_dataArr;
 	
 	@override
-	void readByByteStream(ElfStreamBuffer streamBuffer) {
-	
+	void readByByteStream(ElfStreamBuffer streamBuffer) async {
+		p_type = ElfByteUtils.readElf32Word(await streamBuffer.nextBytes(4));
+		p_offset = ElfByteUtils.readElf32Off(await streamBuffer.nextBytes(4));
+		p_vaddr = ElfByteUtils.readElf32Addr(await streamBuffer.nextBytes(4));
+		p_paddr = ElfByteUtils.readElf32Addr(await streamBuffer.nextBytes(4));
+		p_filesz = ElfByteUtils.readElf32Word(await streamBuffer.nextBytes(4));
+		p_memsz = ElfByteUtils.readElf32Word(await streamBuffer.nextBytes(4));
+		p_flags = ElfByteUtils.readElf32Word(await streamBuffer.nextBytes(4));
+		p_align = ElfByteUtils.readElf32Word(await streamBuffer.nextBytes(4));
 	}
 	
 	@override
-	Iterable<int> toByteStream() {
-		return null;
+	Iterable<int> toByteStream() sync* {
+		yield* ElfByteUtils.writeElf32Word(p_type);
+		yield* ElfByteUtils.writeElf32Off(p_offset);
+		yield* ElfByteUtils.writeElf32Addr(p_vaddr);
+		yield* ElfByteUtils.writeElf32Addr(p_paddr);
+		yield* ElfByteUtils.writeElf32Word(p_filesz);
+		yield* ElfByteUtils.writeElf32Word(p_memsz);
+		yield* ElfByteUtils.writeElf32Word(p_flags);
+		yield* ElfByteUtils.writeElf32Word(p_align);
+	}
+
+	@override
+	String toString() {
+		return '''
+p_type: ${ElfStringUtils.formatPretty16Str(p_type, byteCount: 4)}
+p_offset: ${ElfStringUtils.formatPretty16Str(p_offset, byteCount: 4)}
+p_vaddr: ${ElfStringUtils.formatPretty16Str(p_vaddr, byteCount: 4)}
+p_paddr: ${ElfStringUtils.formatPretty16Str(p_paddr, byteCount: 4)}
+p_filesz: ${ElfStringUtils.formatPretty16Str(p_filesz, byteCount: 4)}
+p_memsz: ${ElfStringUtils.formatPretty16Str(p_memsz, byteCount: 4)}
+p_flags: ${ElfStringUtils.formatPretty16Str(p_flags, byteCount: 4)}
+p_align: ${ElfStringUtils.formatPretty16Str(p_align, byteCount: 4)}
+''';
 	}
 }
