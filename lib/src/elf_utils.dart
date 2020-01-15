@@ -136,29 +136,21 @@ class ElfByteUtils {
 	}
 	
 	/// 读取 [Unsigned_Char]
-	/// 流中至少应该有 4 个 byte
+	/// 流中至少应该有 1 个 byte
 	@Unsigned_Char
 	static int readElf32UnsignedChar(List<int> byteStream) {
-		var unsignedChar = 0;
-		
-		if(byteStream.length != 4) {
+
+		if(byteStream.length != 1) {
 			throw const ElfPropertyFormatException('Elf format error: read unsigned_char not enough 4 bytes!');
 		}
-		
-		for(final byte in byteStream) {
-			unsignedChar <<= 8;
-			unsignedChar |= byte;
-		}
-		
-		return unsignedChar;
+
+		return byteStream[0] & 0xFF;
 	}
 	
 	/// 将 [Unsigned_Char] 转化为流
 	@Unsigned_Char
 	static Iterable<int> writeElf32UnsignedChar(int unsignedChar) sync* {
-		for(var i = 4 ; i >= 0 ; i --) {
-			yield (unsignedChar >> (8 * i)) & 0xFF;
-		}
+		yield unsignedChar & 0xFF;
 	}
 	
 	/// 将 [Elf_ByteBuffer] 转化为流
@@ -180,8 +172,9 @@ class ElfByteUtils {
 			loopCount = 4;
 		}
 		var convertNumber = 0;
-		for(var i = 0 ; i < loopCount ; i ++) {
+		for(var i = loopCount - 1 ; i >= 0 ; i --) {
 			convertNumber |= (number >> (i * 8)) & 0xFF;
+			convertNumber <<= 8;
 		}
 
 		return convertNumber;
@@ -194,8 +187,9 @@ class ElfByteUtils {
 			loopCount = 4;
 		}
 		var convertNumber = 0;
-		for(var i = loopCount - 1 ; i >= 0 ; i --) {
-			convertNumber |= (number >> (i * 8)) & 0xFF;
+		for(var i = 0 ; i < loopCount ; i ++) {
+			convertNumber <<= 8;
+			convertNumber |= ((number >> (i * 8)) & 0xFF);
 		}
 
 		return convertNumber;

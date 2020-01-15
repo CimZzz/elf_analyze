@@ -104,19 +104,19 @@ class ElfHeader extends OperableProperty {
 	@override
 	void readByByteStream(ElfStreamBuffer streamBuffer) async {
 		e_ident = await streamBuffer.nextBytes(EI_NIDENT);
-		e_type = ElfByteUtils.readElf32Half(await streamBuffer.nextBytes(2));
-		e_machine = ElfByteUtils.readElf32Half(await streamBuffer.nextBytes(2));
-		e_version = ElfByteUtils.readElf32Word(await streamBuffer.nextBytes(4));
-		e_entry = ElfByteUtils.readElf32Addr(await streamBuffer.nextBytes(4));
-		e_phoff = ElfByteUtils.readElf32Off(await streamBuffer.nextBytes(4));
-		e_shoff = ElfByteUtils.readElf32Off(await streamBuffer.nextBytes(4));
-		e_flags = ElfByteUtils.readElf32Word(await streamBuffer.nextBytes(4));
-		e_ehsize = ElfByteUtils.readElf32Half(await streamBuffer.nextBytes(2));
-		e_phentsize = ElfByteUtils.readElf32Half(await streamBuffer.nextBytes(2));
-		e_phnum = ElfByteUtils.readElf32Half(await streamBuffer.nextBytes(2));
-		e_shentsize = ElfByteUtils.readElf32Half(await streamBuffer.nextBytes(2));
-		e_shnum = ElfByteUtils.readElf32Half(await streamBuffer.nextBytes(2));
-		e_shstrndx = ElfByteUtils.readElf32Half(await streamBuffer.nextBytes(2));
+		e_type = await streamBuffer.nextElf32Half();
+		e_machine = await streamBuffer.nextElf32Half();
+		e_version = await streamBuffer.nextElf32Word();
+		e_entry = await streamBuffer.nextElf32Addr();
+		e_phoff = await streamBuffer.nextElf32Off();
+		e_shoff = await streamBuffer.nextElf32Off();
+		e_flags = await streamBuffer.nextElf32Word();
+		e_ehsize = await streamBuffer.nextElf32Half();
+		e_phentsize = await streamBuffer.nextElf32Half();
+		e_phnum = await streamBuffer.nextElf32Half();
+		e_shentsize = await streamBuffer.nextElf32Half();
+		e_shnum = await streamBuffer.nextElf32Half();
+		e_shstrndx = await streamBuffer.nextElf32Half();
 	}
 	
 	@override
@@ -147,6 +147,7 @@ e_machine: ${ElfStringUtils.formatPretty16Str(e_machine, byteCount: 2)}
 e_version: ${ElfStringUtils.formatPretty16Str(e_version, byteCount: 4)}
 e_entry: ${ElfStringUtils.formatPretty16Str(e_entry, byteCount: 4)}
 e_phoff: ${ElfStringUtils.formatPretty16Str(e_phoff, byteCount: 4)}
+e_shoff: ${ElfStringUtils.formatPretty16Str(e_shoff, byteCount: 4)}
 e_flags: ${ElfStringUtils.formatPretty16Str(e_flags, byteCount: 4)}
 e_ehsize: ${ElfStringUtils.formatPretty16Str(e_ehsize, byteCount: 2)}
 e_phentsize: ${ElfStringUtils.formatPretty16Str(e_phentsize, byteCount: 2)}

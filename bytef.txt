@@ -1,0 +1,415 @@
+/usr/local/opt/dart/libexec/bin/dart --enable-asserts --enable-vm-service:51073 /Users/wangyanxiong/Documents/IDEAProject/elf_analyze/example/elf_analyze_example.dart
+Observatory listening on http://127.0.0.1:51073/3qeETXpsfvQ=/
+
+************************************************
+* 对象名: elf header
+************************************************
+e_ident: 0x7f 0x45 0x4c 0x46 0x01 0x01 0x01 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+e_type: 0x0300
+e_machine: 0x2800
+e_version: 0x01000000
+e_entry: 0x00000000
+e_phoff: 0x34000000
+e_shoff: 0x6c320000
+e_flags: 0x00020005
+e_ehsize: 0x3400
+e_phentsize: 0x2000
+e_phnum: 0x0800
+e_shentsize: 0x2800
+e_shnum: 0x1a00
+e_shstrndx: 0x1900
+
+
+elf_header.e_shoff: 12908
+************************************************
+* 对象名: elf section header 0
+************************************************
+sh_name: 0x00000000
+sh_type: 0x00000000
+sh_flags: 0x00000000
+sh_addr: 0x00000000
+sh_offset: 0x00000000
+sh_size: 0x00000000
+sh_link: 0x00000000
+sh_info: 0x00000000
+sh_addralign: 0x00000000
+sh_entsize: 0x00000000
+
+
+************************************************
+* 对象名: elf section header 1
+************************************************
+sh_name: 0x0b000000
+sh_type: 0x07000000
+sh_flags: 0x02000000
+sh_addr: 0x34010000
+sh_offset: 0x34010000
+sh_size: 0x98000000
+sh_link: 0x00000000
+sh_info: 0x00000000
+sh_addralign: 0x04000000
+sh_entsize: 0x00000000
+
+
+************************************************
+* 对象名: elf section header 2
+************************************************
+sh_name: 0x1f000000
+sh_type: 0x07000000
+sh_flags: 0x02000000
+sh_addr: 0xcc010000
+sh_offset: 0xcc010000
+sh_size: 0x24000000
+sh_link: 0x00000000
+sh_info: 0x00000000
+sh_addralign: 0x04000000
+sh_entsize: 0x00000000
+
+
+************************************************
+* 对象名: elf section header 3
+************************************************
+sh_name: 0x32000000
+sh_type: 0x0b000000
+sh_flags: 0x02000000
+sh_addr: 0xf0010000
+sh_offset: 0xf0010000
+sh_size: 0x00030000
+sh_link: 0x04000000
+sh_info: 0x01000000
+sh_addralign: 0x04000000
+sh_entsize: 0x10000000
+
+
+************************************************
+* 对象名: elf section header 4
+************************************************
+sh_name: 0x3a000000
+sh_type: 0x03000000
+sh_flags: 0x02000000
+sh_addr: 0xf0040000
+sh_offset: 0xf0040000
+sh_size: 0x37030000
+sh_link: 0x00000000
+sh_info: 0x00000000
+sh_addralign: 0x01000000
+sh_entsize: 0x00000000
+
+
+************************************************
+* 对象名: elf section header 5
+************************************************
+sh_name: 0x42000000
+sh_type: 0x05000000
+sh_flags: 0x02000000
+sh_addr: 0x28080000
+sh_offset: 0x28080000
+sh_size: 0x5c010000
+sh_link: 0x03000000
+sh_info: 0x00000000
+sh_addralign: 0x04000000
+sh_entsize: 0x04000000
+
+
+************************************************
+* 对象名: elf section header 6
+************************************************
+sh_name: 0x48000000
+sh_type: 0xffffff6f
+sh_flags: 0x02000000
+sh_addr: 0x84090000
+sh_offset: 0x84090000
+sh_size: 0x60000000
+sh_link: 0x03000000
+sh_info: 0x00000000
+sh_addralign: 0x02000000
+sh_entsize: 0x02000000
+
+
+************************************************
+* 对象名: elf section header 7
+************************************************
+sh_name: 0x55000000
+sh_type: 0xfdffff6f
+sh_flags: 0x02000000
+sh_addr: 0xe4090000
+sh_offset: 0xe4090000
+sh_size: 0x1c000000
+sh_link: 0x04000000
+sh_info: 0x01000000
+sh_addralign: 0x04000000
+sh_entsize: 0x00000000
+
+
+************************************************
+* 对象名: elf section header 8
+************************************************
+sh_name: 0x64000000
+sh_type: 0xfeffff6f
+sh_flags: 0x02000000
+sh_addr: 0x000a0000
+sh_offset: 0x000a0000
+sh_size: 0x40000000
+sh_link: 0x04000000
+sh_info: 0x02000000
+sh_addralign: 0x04000000
+sh_entsize: 0x00000000
+
+
+************************************************
+* 对象名: elf section header 9
+************************************************
+sh_name: 0x73000000
+sh_type: 0x09000000
+sh_flags: 0x02000000
+sh_addr: 0x400a0000
+sh_offset: 0x400a0000
+sh_size: 0xc8000000
+sh_link: 0x03000000
+sh_info: 0x00000000
+sh_addralign: 0x04000000
+sh_entsize: 0x08000000
+
+
+************************************************
+* 对象名: elf section header 10
+************************************************
+sh_name: 0x7c000000
+sh_type: 0x09000000
+sh_flags: 0x42000000
+sh_addr: 0x080b0000
+sh_offset: 0x080b0000
+sh_size: 0xd8000000
+sh_link: 0x03000000
+sh_info: 0x13000000
+sh_addralign: 0x04000000
+sh_entsize: 0x08000000
+
+
+************************************************
+* 对象名: elf section header 11
+************************************************
+sh_name: 0x80000000
+sh_type: 0x01000000
+sh_flags: 0x06000000
+sh_addr: 0xe00b0000
+sh_offset: 0xe00b0000
+sh_size: 0x58010000
+sh_link: 0x00000000
+sh_info: 0x00000000
+sh_addralign: 0x04000000
+sh_entsize: 0x00000000
+
+
+************************************************
+* 对象名: elf section header 12
+************************************************
+sh_name: 0x85000000
+sh_type: 0x01000000
+sh_flags: 0x06000000
+sh_addr: 0x380d0000
+sh_offset: 0x380d0000
+sh_size: 0x34160000
+sh_link: 0x00000000
+sh_info: 0x00000000
+sh_addralign: 0x04000000
+sh_entsize: 0x00000000
+
+
+************************************************
+* 对象名: elf section header 13
+************************************************
+sh_name: 0x8b000000
+sh_type: 0x01000070
+sh_flags: 0x82000000
+sh_addr: 0x6c230000
+sh_offset: 0x6c230000
+sh_size: 0x88010000
+sh_link: 0x0c000000
+sh_info: 0x00000000
+sh_addralign: 0x04000000
+sh_entsize: 0x08000000
+
+
+************************************************
+* 对象名: elf section header 14
+************************************************
+sh_name: 0x96000000
+sh_type: 0x01000000
+sh_flags: 0x32000000
+sh_addr: 0xf4240000
+sh_offset: 0xf4240000
+sh_size: 0x98040000
+sh_link: 0x00000000
+sh_info: 0x00000000
+sh_addralign: 0x01000000
+sh_entsize: 0x01000000
+
+
+************************************************
+* 对象名: elf section header 15
+************************************************
+sh_name: 0x9e000000
+sh_type: 0x01000000
+sh_flags: 0x02000000
+sh_addr: 0x8c290000
+sh_offset: 0x8c290000
+sh_size: 0x68010000
+sh_link: 0x00000000
+sh_info: 0x00000000
+sh_addralign: 0x04000000
+sh_entsize: 0x00000000
+
+
+************************************************
+* 对象名: elf section header 16
+************************************************
+sh_name: 0xa9000000
+sh_type: 0x0f000000
+sh_flags: 0x03000000
+sh_addr: 0x1c3e0000
+sh_offset: 0x1c2e0000
+sh_size: 0x08000000
+sh_link: 0x00000000
+sh_info: 0x00000000
+sh_addralign: 0x04000000
+sh_entsize: 0x04000000
+
+
+************************************************
+* 对象名: elf section header 17
+************************************************
+sh_name: 0xb5000000
+sh_type: 0x01000000
+sh_flags: 0x03000000
+sh_addr: 0x243e0000
+sh_offset: 0x242e0000
+sh_size: 0x48000000
+sh_link: 0x00000000
+sh_info: 0x00000000
+sh_addralign: 0x04000000
+sh_entsize: 0x00000000
+
+
+************************************************
+* 对象名: elf section header 18
+************************************************
+sh_name: 0xc2000000
+sh_type: 0x06000000
+sh_flags: 0x03000000
+sh_addr: 0x6c3e0000
+sh_offset: 0x6c2e0000
+sh_size: 0x08010000
+sh_link: 0x04000000
+sh_info: 0x00000000
+sh_addralign: 0x04000000
+sh_entsize: 0x08000000
+
+
+************************************************
+* 对象名: elf section header 19
+************************************************
+sh_name: 0xcb000000
+sh_type: 0x01000000
+sh_flags: 0x03000000
+sh_addr: 0x743f0000
+sh_offset: 0x742f0000
+sh_size: 0x8c000000
+sh_link: 0x00000000
+sh_info: 0x00000000
+sh_addralign: 0x04000000
+sh_entsize: 0x00000000
+
+
+************************************************
+* 对象名: elf section header 20
+************************************************
+sh_name: 0xd0000000
+sh_type: 0x01000000
+sh_flags: 0x03000000
+sh_addr: 0x00400000
+sh_offset: 0x00300000
+sh_size: 0x08000000
+sh_link: 0x00000000
+sh_info: 0x00000000
+sh_addralign: 0x04000000
+sh_entsize: 0x00000000
+
+
+************************************************
+* 对象名: elf section header 21
+************************************************
+sh_name: 0xd6000000
+sh_type: 0x08000000
+sh_flags: 0x03000000
+sh_addr: 0x08400000
+sh_offset: 0x08300000
+sh_size: 0x01000000
+sh_link: 0x00000000
+sh_info: 0x00000000
+sh_addralign: 0x01000000
+sh_entsize: 0x00000000
+
+
+************************************************
+* 对象名: elf section header 22
+************************************************
+sh_name: 0xdb000000
+sh_type: 0x01000000
+sh_flags: 0x30000000
+sh_addr: 0x00000000
+sh_offset: 0x08300000
+sh_size: 0x08010000
+sh_link: 0x00000000
+sh_info: 0x00000000
+sh_addralign: 0x01000000
+sh_entsize: 0x01000000
+
+
+************************************************
+* 对象名: elf section header 23
+************************************************
+sh_name: 0xe4000000
+sh_type: 0x07000000
+sh_flags: 0x00000000
+sh_addr: 0x00000000
+sh_offset: 0x10310000
+sh_size: 0x1c000000
+sh_link: 0x00000000
+sh_info: 0x00000000
+sh_addralign: 0x04000000
+sh_entsize: 0x00000000
+
+
+************************************************
+* 对象名: elf section header 24
+************************************************
+sh_name: 0xfb000000
+sh_type: 0x03000070
+sh_flags: 0x00000000
+sh_addr: 0x00000000
+sh_offset: 0x2c310000
+sh_size: 0x34000000
+sh_link: 0x00000000
+sh_info: 0x00000000
+sh_addralign: 0x01000000
+sh_entsize: 0x00000000
+
+
+************************************************
+* 对象名: elf section header 25
+************************************************
+sh_name: 0x01000000
+sh_type: 0x03000000
+sh_flags: 0x00000000
+sh_addr: 0x00000000
+sh_offset: 0x60310000
+sh_size: 0x0b010000
+sh_link: 0x00000000
+sh_info: 0x00000000
+sh_addralign: 0x01000000
+sh_entsize: 0x00000000
+
+
+
+Process finished with exit code 0
