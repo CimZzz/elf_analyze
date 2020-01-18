@@ -20,7 +20,16 @@ class ElfStreamBuffer {
 		_randomAccessFile = await _randomAccessFile.setPosition(position);
 	}
 
-	Future<List<int>> nextBytes(int count, {bool allowNotEnough = false}) async {
+	Future<List<int>> nextBytes(int count, {bool allowNotEnough = false, int alignCount = 0, bool cutPaddingByte = false}) async {
+		final oldCount = count;
+		var paddingByteCount = 0;
+		if(alignCount > 0) {
+			paddingByteCount = count % alignCount;
+			if(paddingByteCount != 0) {
+				paddingByteCount = alignCount - paddingByteCount;
+				count += paddingByteCount;
+			}
+		}
 		final readBytes = await _randomAccessFile.read(count);
 		if(readBytes.length != count) {
 			if(allowNotEnough) {
@@ -30,7 +39,16 @@ class ElfStreamBuffer {
 				throw ElfBufferException('byte not enough, need : $count');
 			}
 		}
-		return readBytes;
+
+		if(paddingByteCount == 0 || !cutPaddingByte) {
+			return readBytes;
+		}
+
+		if(oldCount == 0) {
+			return [];
+		}
+
+		return readBytes.sublist(0, readBytes.length - paddingByteCount);
 	}
 
 	@Elf32_Word

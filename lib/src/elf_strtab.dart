@@ -57,6 +57,7 @@ class ElfStringTable extends OperableProperty {
 		return '''
 start offset: ${ElfStringUtils.formatPretty16Str(_position, byteCount: 4)}
 size: ${ElfStringUtils.formatPretty16Str(_size, byteCount: 4)}
+str: ${String.fromCharCodes(buffers)}
 buffers: ${buffers.map((int num) => ElfStringUtils.formatPretty16Str(num)).join(" ")}
 ''';
 	}

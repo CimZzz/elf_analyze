@@ -7,29 +7,59 @@ import 'elf_utils.dart';
 
 class ElfSymbolTable extends OperableProperty {
 
-	List<ElfSymbol> _symbolTable;
+	List<ElfSymbol> symbolTable;
 
 	int _position;
+	int _entSize;
 	int _size;
 
 
 	/// 设置读取位置
 	/// position 和 size 都是原始数据
-	void setReadPosition(int position, int size) {
+	void setReadPosition(int position, int entSize, int size) {
 		_position = position;
+		_entSize = entSize;
 		_size = size;
 	}
 
 	@override
 	void readByByteStream(ElfStreamBuffer streamBuffer) async {
-		await streamBuffer.setPosition(ElfByteUtils.toLSB(_position));
-		final realSize = ElfByteUtils.toLSB(_size);
-		buffers = await streamBuffer.nextBytes(realSize);
+		var curPosition = ElfByteUtils.toLSB(_position);
+		final entSize = ElfByteUtils.toLSB(_entSize);
+		var realSize = ElfByteUtils.toLSB(_size) ~/ entSize;
+		symbolTable = [];
+		while(realSize -- > 0) {
+			await streamBuffer.setPosition(curPosition);
+			curPosition += entSize;
+			final symbol = ElfSymbol();
+			await symbol.readByByteStream(streamBuffer);
+			symbolTable.add(symbol);
+		}
 	}
 
 	@override
 	Iterable<int> toByteStream() sync* {
-		yield* buffers;
+		for(final symbol in symbolTable) {
+			yield* symbol.toByteStream();
+		}
+	}
+
+	@override
+	String toString() {
+		var headerStr = '''
+start offset: ${ElfStringUtils.formatPretty16Str(_position, byteCount: 4)}
+entSize: ${ElfStringUtils.formatPretty16Str(_entSize, byteCount: 4)}
+size: ${ElfStringUtils.formatPretty16Str(_size, byteCount: 4)}
+''';
+		var count = 0;
+		for(final symbol in symbolTable) {
+			headerStr += '''
+--- item $count:
+$symbol
+''';
+			count ++;
+		}
+		return headerStr;
 	}
 }
 
@@ -61,7 +91,7 @@ class ElfSymbol extends OperableProperty {
 	///
 	/// 0D - STB_LOPROC 为处理保留的属性区间
 	///
-	/// 0F -  STB_HIPROC 为处理保留的属性区间
+	/// 0F - STB_HIPROC 为处理保留的属性区间
 	///
 	/// 该值的高四位:
 	///
@@ -77,7 +107,7 @@ class ElfSymbol extends OperableProperty {
 	///
 	/// 0D - STT_LOPROC 为处理保留的属性区间
 	///
-	/// 0F - STB_HIPROC 为处理保留的属性区间
+	/// 0F - STT_HIPROC 为处理保留的属性区间
 	@Unsigned_Char
 	int st_info;
 
@@ -86,21 +116,54 @@ class ElfSymbol extends OperableProperty {
 	int st_other;
 
 	/// 任何一个符号表项的定义都与某一个 "节" 相联系，
+	/// 下列索引值将被保留，具有特殊含义:
+	///
+	/// 00 - SHN_UNDEF 未定义
+	///
+	/// 0xFF00 - SHN_LORESERVE 被保留的索引号下限
+	///
+	/// 0xFF00 - SHN_LOPROC 为处理器定制节所保留的索引号区间下限
+	///
+	/// 0xFF1F - SHN_HIPROC 为处理器定制节所保留的索引号区间上限
+	///
+	/// 0xFFF1 - SHN_ABS 所定义的符号具有绝对值，不会因重定位而改变
+	///
+	/// 0xFFF2 - SHN_COMMON 定义的符号是公共的，比如未分配的 external 变量
+	///
+	/// 0xFFFF - SHN_HORESERVE 被保留的索引号上限
 	@Elf32_Half
 	int st_shndx;
 
 
-
+	@override
+	void readByByteStream(ElfStreamBuffer streamBuffer) async {
+		st_name = await streamBuffer.nextElf32Word();
+		st_value = await streamBuffer.nextElf32Addr();
+		st_size = await streamBuffer.nextElf32Word();
+		st_info = await streamBuffer.nextElf32UnsignedChar();
+		st_other = await streamBuffer.nextElf32UnsignedChar();
+		st_shndx = await streamBuffer.nextElf32Half();
+	}
 
 	@override
-  void readByByteStream(ElfStreamBuffer streamBuffer) {
-    // TODO: implement readByByteStream
-  }
+	Iterable<int> toByteStream() sync* {
+		yield* ElfByteUtils.writeElf32Word(st_name);
+		yield* ElfByteUtils.writeElf32Addr(st_value);
+		yield* ElfByteUtils.writeElf32Word(st_size);
+		yield* ElfByteUtils.writeElf32UnsignedChar(st_info);
+		yield* ElfByteUtils.writeElf32UnsignedChar(st_other);
+		yield* ElfByteUtils.writeElf32Half(st_shndx);
+	}
 
-  @override
-  Iterable<int> toByteStream() {
-    // TODO: implement toByteStream
-    return null;
-  }
-
+	@override
+	String toString() {
+		return '''
+st_name: ${ElfStringUtils.formatPretty16Str(st_name, byteCount: 4)}
+st_value: ${ElfStringUtils.formatPretty16Str(st_value, byteCount: 4)}
+st_size: ${ElfStringUtils.formatPretty16Str(st_size, byteCount: 4)}
+st_info: ${ElfStringUtils.formatPretty16Str(st_info, byteCount: 1)}
+st_other: ${ElfStringUtils.formatPretty16Str(st_other, byteCount: 1)}
+st_shndx: ${ElfStringUtils.formatPretty16Str(st_shndx, byteCount: 2)}
+''';
+	}
 }

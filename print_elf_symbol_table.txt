@@ -1,0 +1,440 @@
+************************************************
+* 对象名: elf symbol table
+************************************************
+start offset: 0xf0010000
+entSize: 0x10000000
+size: 0x00030000
+--- item 0:
+st_name: 0x00000000
+st_value: 0x00000000
+st_size: 0x00000000
+st_info: 0x00
+st_other: 0x00
+st_shndx: 0x0000
+
+--- item 1:
+st_name: 0x01000000
+st_value: 0x00000000
+st_size: 0x00000000
+st_info: 0x12
+st_other: 0x00
+st_shndx: 0x0000
+
+--- item 2:
+st_name: 0x2c000000
+st_value: 0x00000000
+st_size: 0x00000000
+st_info: 0x12
+st_other: 0x00
+st_shndx: 0x0000
+
+--- item 3:
+st_name: 0x3b000000
+st_value: 0x00000000
+st_size: 0x00000000
+st_info: 0x12
+st_other: 0x00
+st_shndx: 0x0000
+
+--- item 4:
+st_name: 0x44000000
+st_value: 0x7d0d0000
+st_size: 0x10000000
+st_info: 0x12
+st_other: 0x00
+st_shndx: 0x0c00
+
+--- item 5:
+st_name: 0x73000000
+st_value: 0xf1120000
+st_size: 0x08000000
+st_info: 0x12
+st_other: 0x00
+st_shndx: 0x0c00
+
+--- item 6:
+st_name: 0x8a000000
+st_value: 0xf1140000
+st_size: 0x02000000
+st_info: 0x12
+st_other: 0x00
+st_shndx: 0x0c00
+
+--- item 7:
+st_name: 0x9b000000
+st_value: 0xc5150000
+st_size: 0x0c000000
+st_info: 0x12
+st_other: 0x00
+st_shndx: 0x0c00
+
+--- item 8:
+st_name: 0xb3000000
+st_value: 0x5d150000
+st_size: 0x34000000
+st_info: 0x12
+st_other: 0x00
+st_shndx: 0x0c00
+
+--- item 9:
+st_name: 0xd3000000
+st_value: 0x91150000
+st_size: 0x34000000
+st_info: 0x12
+st_other: 0x00
+st_shndx: 0x0c00
+
+--- item 10:
+st_name: 0xea000000
+st_value: 0x39130000
+st_size: 0xa0000000
+st_info: 0x12
+st_other: 0x00
+st_shndx: 0x0c00
+
+--- item 11:
+st_name: 0x01010000
+st_value: 0xf5140000
+st_size: 0x68000000
+st_info: 0x12
+st_other: 0x00
+st_shndx: 0x0c00
+
+--- item 12:
+st_name: 0x10010000
+st_value: 0x49100000
+st_size: 0xac000000
+st_info: 0x12
+st_other: 0x00
+st_shndx: 0x0c00
+
+--- item 13:
+st_name: 0x20010000
+st_value: 0xdd0d0000
+st_size: 0x6c020000
+st_info: 0x12
+st_other: 0x00
+st_shndx: 0x0c00
+
+--- item 14:
+st_name: 0x36010000
+st_value: 0xa1110000
+st_size: 0x50010000
+st_info: 0x12
+st_other: 0x00
+st_shndx: 0x0c00
+
+--- item 15:
+st_name: 0x46010000
+st_value: 0xf5100000
+st_size: 0xac000000
+st_info: 0x12
+st_other: 0x00
+st_shndx: 0x0c00
+
+--- item 16:
+st_name: 0x56010000
+st_value: 0x29130000
+st_size: 0x08000000
+st_info: 0x12
+st_other: 0x00
+st_shndx: 0x0c00
+
+--- item 17:
+st_name: 0x6d010000
+st_value: 0x31130000
+st_size: 0x08000000
+st_info: 0x12
+st_other: 0x00
+st_shndx: 0x0c00
+
+--- item 18:
+st_name: 0x84010000
+st_value: 0xd1150000
+st_size: 0x12000000
+st_info: 0x12
+st_other: 0x00
+st_shndx: 0x0c00
+
+--- item 19:
+st_name: 0x97010000
+st_value: 0x00000000
+st_size: 0x00000000
+st_info: 0x11
+st_other: 0x00
+st_shndx: 0x0000
+
+--- item 20:
+st_name: 0x9c010000
+st_value: 0x00000000
+st_size: 0x00000000
+st_info: 0x12
+st_other: 0x00
+st_shndx: 0x0000
+
+--- item 21:
+st_name: 0xad010000
+st_value: 0x00000000
+st_size: 0x00000000
+st_info: 0x12
+st_other: 0x00
+st_shndx: 0x0000
+
+--- item 22:
+st_name: 0xbd010000
+st_value: 0x00000000
+st_size: 0x00000000
+st_info: 0x11
+st_other: 0x00
+st_shndx: 0x0000
+
+--- item 23:
+st_name: 0xcf010000
+st_value: 0x00000000
+st_size: 0x00000000
+st_info: 0x12
+st_other: 0x00
+st_shndx: 0x0000
+
+--- item 24:
+st_name: 0xd5010000
+st_value: 0x8d0d0000
+st_size: 0x50000000
+st_info: 0x12
+st_other: 0x00
+st_shndx: 0x0c00
+
+--- item 25:
+st_name: 0xe6010000
+st_value: 0x00000000
+st_size: 0x00000000
+st_info: 0x12
+st_other: 0x00
+st_shndx: 0x0000
+
+--- item 26:
+st_name: 0xed010000
+st_value: 0x00000000
+st_size: 0x00000000
+st_info: 0x12
+st_other: 0x00
+st_shndx: 0x0000
+
+--- item 27:
+st_name: 0xf5010000
+st_value: 0xd9160000
+st_size: 0x38000000
+st_info: 0x12
+st_other: 0x00
+st_shndx: 0x0c00
+
+--- item 28:
+st_name: 0x03020000
+st_value: 0x53170000
+st_size: 0x20000000
+st_info: 0x12
+st_other: 0x00
+st_shndx: 0x0c00
+
+--- item 29:
+st_name: 0x15020000
+st_value: 0x5d160000
+st_size: 0x34000000
+st_info: 0x12
+st_other: 0x00
+st_shndx: 0x0c00
+
+--- item 30:
+st_name: 0x21020000
+st_value: 0xe4150000
+st_size: 0x00000000
+st_info: 0x12
+st_other: 0x00
+st_shndx: 0x0c00
+
+--- item 31:
+st_name: 0x30020000
+st_value: 0x15160000
+st_size: 0x48000000
+st_info: 0x12
+st_other: 0x00
+st_shndx: 0x0c00
+
+--- item 32:
+st_name: 0x3f020000
+st_value: 0x75170000
+st_size: 0x14000000
+st_info: 0x12
+st_other: 0x00
+st_shndx: 0x0c00
+
+--- item 33:
+st_name: 0x4a020000
+st_value: 0xc7170000
+st_size: 0x06000000
+st_info: 0x12
+st_other: 0x00
+st_shndx: 0x0c00
+
+--- item 34:
+st_name: 0x5c020000
+st_value: 0x11170000
+st_size: 0x3c000000
+st_info: 0x12
+st_other: 0x00
+st_shndx: 0x0c00
+
+--- item 35:
+st_name: 0x6a020000
+st_value: 0x91160000
+st_size: 0x48000000
+st_info: 0x12
+st_other: 0x00
+st_shndx: 0x0c00
+
+--- item 36:
+st_name: 0x76020000
+st_value: 0x4d170000
+st_size: 0x06000000
+st_info: 0x12
+st_other: 0x00
+st_shndx: 0x0c00
+
+--- item 37:
+st_name: 0x7f020000
+st_value: 0x00000000
+st_size: 0x00000000
+st_info: 0x12
+st_other: 0x00
+st_shndx: 0x0000
+
+--- item 38:
+st_name: 0x8f020000
+st_value: 0x00000000
+st_size: 0x00000000
+st_info: 0x12
+st_other: 0x00
+st_shndx: 0x0000
+
+--- item 39:
+st_name: 0x9e020000
+st_value: 0x00000000
+st_size: 0x00000000
+st_info: 0x12
+st_other: 0x00
+st_shndx: 0x0000
+
+--- item 40:
+st_name: 0xb6020000
+st_value: 0x89170000
+st_size: 0x20000000
+st_info: 0x12
+st_other: 0x00
+st_shndx: 0x0c00
+
+--- item 41:
+st_name: 0xc8020000
+st_value: 0xa9170000
+st_size: 0x0c000000
+st_info: 0x12
+st_other: 0x00
+st_shndx: 0x0c00
+
+--- item 42:
+st_name: 0xd5020000
+st_value: 0xbb170000
+st_size: 0x0c000000
+st_info: 0x12
+st_other: 0x00
+st_shndx: 0x0c00
+
+--- item 43:
+st_name: 0xe9020000
+st_value: 0x04400000
+st_size: 0x04000000
+st_info: 0x11
+st_other: 0x00
+st_shndx: 0x1400
+
+--- item 44:
+st_name: 0xfe020000
+st_value: 0xb5170000
+st_size: 0x06000000
+st_info: 0x12
+st_other: 0x00
+st_shndx: 0x0c00
+
+--- item 45:
+st_name: 0x0a030000
+st_value: 0x08400000
+st_size: 0x00000000
+st_info: 0x10
+st_other: 0x00
+st_shndx: 0xf1ff
+
+--- item 46:
+st_name: 0x11030000
+st_value: 0x09400000
+st_size: 0x00000000
+st_info: 0x10
+st_other: 0x00
+st_shndx: 0xf1ff
+
+--- item 47:
+st_name: 0x16030000
+st_value: 0x08400000
+st_size: 0x00000000
+st_info: 0x10
+st_other: 0x00
+st_shndx: 0xf1ff
+
+
+		
+elf symbol 0 name: 
+elf symbol 1 name: __cxa_atexit
+elf symbol 2 name: __cxa_finalize
+elf symbol 3 name: snprintf
+elf symbol 4 name: Java_com_ss_android_ugc_aweme_NativeTest_test1
+elf symbol 5 name: __aeabi_unwind_cpp_pr0
+elf symbol 6 name: _Unwind_Complete
+elf symbol 7 name: _Unwind_DeleteException
+elf symbol 8 name: _Unwind_GetLanguageSpecificData
+elf symbol 9 name: _Unwind_GetRegionStart
+elf symbol 10 name: _Unwind_RaiseException
+elf symbol 11 name: _Unwind_Resume
+elf symbol 12 name: _Unwind_VRS_Get
+elf symbol 13 name: _Unwind_VRS_Interpret
+elf symbol 14 name: _Unwind_VRS_Pop
+elf symbol 15 name: _Unwind_VRS_Set
+elf symbol 16 name: __aeabi_unwind_cpp_pr1
+elf symbol 17 name: __aeabi_unwind_cpp_pr2
+elf symbol 18 name: __gnu_unwind_frame
+elf symbol 19 name: __sF
+elf symbol 20 name: __stack_chk_fail
+elf symbol 21 name: dladdr
+elf symbol 22 name: __stack_chk_guard
+elf symbol 23 name: abort
+elf symbol 24 name: decode_eht_entry
+elf symbol 25 name: fflush
+elf symbol 26 name: fprintf
+elf symbol 27 name: unw_get_fpreg
+elf symbol 28 name: unw_get_proc_info
+elf symbol 29 name: unw_get_reg
+elf symbol 30 name: unw_getcontext
+elf symbol 31 name: unw_init_local
+elf symbol 32 name: unw_resume
+elf symbol 33 name: unw_save_vfp_as_X
+elf symbol 34 name: unw_set_fpreg
+elf symbol 35 name: unw_set_reg
+elf symbol 36 name: unw_step
+elf symbol 37 name: __aeabi_memclr8
+elf symbol 38 name: __aeabi_memcpy
+elf symbol 39 name: __gnu_Unwind_Find_exidx
+elf symbol 40 name: unw_get_proc_name
+elf symbol 41 name: unw_is_fpreg
+elf symbol 42 name: unw_is_signal_frame
+elf symbol 43 name: unw_local_addr_space
+elf symbol 44 name: unw_regname
+elf symbol 45 name: _edata
+elf symbol 46 name: _end
+elf symbol 47 name: __bss_start
